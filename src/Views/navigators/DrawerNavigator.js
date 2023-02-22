@@ -46,7 +46,7 @@ const DrawerScreenContainer = ({ children }) => {
         inputRange: [0, 1],
         outputRange: [1, 0.8],
     });
-     const borderRadius = Animated.interpolateNode(progress.value, {
+    const borderRadius = Animated.interpolateNode(progress.value, {
         inputRange: [0, 1],
         outputRange: [0, 25],
     });
@@ -55,13 +55,13 @@ const DrawerScreenContainer = ({ children }) => {
             style={{
                 backgroundColor: COLORS.white,
                 flex: 1,
-                transform:[{scale}],
+                transform: [{ scale }],
                 borderRadius,
                 overflow: 'hidden',
             }}>
-                <StatusBar barStyle="dark-content" backgroundColor={isDrawerOpen =="open" ? COLORS.primary: COLORS.white}/>
-                {children}
-                </Animated.View>
+            <StatusBar barStyle="dark-content" backgroundColor={isDrawerOpen == "open" ? COLORS.primary : COLORS.white} />
+            {children}
+        </Animated.View>
     );
 };
 
@@ -105,7 +105,7 @@ const DrawerNavigator = () => {
                     ),
                 }}>
 
-                {({ props }) => <DrawerScreenContainer>
+                {props => <DrawerScreenContainer>
                     <HomeScreen {...props} />
                 </DrawerScreenContainer>}
             </Drawer.Screen>
@@ -123,7 +123,7 @@ const DrawerNavigator = () => {
                     ),
                 }}>
 
-                {({ props }) => <DrawerScreenContainer>
+                {props => <DrawerScreenContainer>
                     <HomeScreen {...props} />
                 </DrawerScreenContainer>}
             </Drawer.Screen>
@@ -141,7 +141,7 @@ const DrawerNavigator = () => {
                     ),
                 }}>
 
-                {({ props }) => <DrawerScreenContainer>
+                {props => <DrawerScreenContainer>
                     <HomeScreen {...props} />
                 </DrawerScreenContainer>}
             </Drawer.Screen>
@@ -159,7 +159,7 @@ const DrawerNavigator = () => {
                     ),
                 }}>
 
-                {({ props }) => <DrawerScreenContainer>
+                {props => <DrawerScreenContainer>
                     <HomeScreen {...props} />
                 </DrawerScreenContainer>}
             </Drawer.Screen>
@@ -177,11 +177,11 @@ const DrawerNavigator = () => {
                     ),
                 }}>
 
-                {({ props }) => <DrawerScreenContainer>
+                {props => <DrawerScreenContainer>
                     <HomeScreen {...props} />
                 </DrawerScreenContainer>}
             </Drawer.Screen>
-            
+
         </Drawer.Navigator>
     )
 }
