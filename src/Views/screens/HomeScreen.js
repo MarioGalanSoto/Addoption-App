@@ -57,6 +57,7 @@ const HomeScreen = ({ navigation }) => {
 
     const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
     const [filteredPets, setFilteredPets] = React.useState([]);
+
     const filterPet = index => {
         const currentPets = pets.filter((item) => item?.pet?.toUpperCase() == petCategories[index].name,
         )[0].pets;
@@ -116,6 +117,7 @@ const HomeScreen = ({ navigation }) => {
                             <View key={"pet" + index} style={{ alignItems: 'center' }}>
                                 <TouchableOpacity
                                     onPress={() => {
+                                        filterPet(index);
                                         setSelectedCategoryIndex(index);
                                     }}
                                     style={[style.categoryBtn, {
